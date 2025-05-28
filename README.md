@@ -8,34 +8,7 @@
 
 </div>
 
-<div markdown='1' class="sidebar">
 
-### **Contents**
-
-1.  **Preface**
-1.  **Introduction**
-    1.  **Profile**
-    1.  **Project Overview**
-1.  **Design**
-1.  **Installation**
-1.  **Usage**
-    1.  **Parameters**
-    1.  **Includes**
-    1.  **Ignores**
-1.  **Vendors**
-1.  **Templates**
-    1.  **Structure**
-    1.  **Multilingual**
-
-### Glossary
-
-1.  **Glossary**
-
-### Reference
-
-1.  **Reference**
-
-</div>
  
 ##  **Introduction**
 
@@ -50,7 +23,11 @@
 
 ---
 
-### **Introduction / Profile**
+### **Profile**
+<sub>Introduction / Profile</sub>
+
+<br>
+
 
 
 *  Company: VivaRado LLP
@@ -60,7 +37,11 @@
 ---
 
 
-### **Introduction / Project Overview**
+### **Project Overview**
+<sub>Introduction / Project Overview</sub>
+
+<br>
+
 
 *   Project Name: IncluDoc
 *   Code Name: IncDoc
@@ -70,6 +51,7 @@
 
 
 ### **Design**
+
 
 IncluDoc gathers Markdown files, handles include statements and generates a main README.md and/or a multilingual README.html with a user interface.
 
@@ -82,6 +64,7 @@ The user interface and SVG on the documents are designed to work with ```prefers
 ---
 
 ### **Installation**
+
 
 Prerequisites:
 
@@ -105,11 +88,16 @@ or install each dependency package manually:
 
 ### **Usage**
 
+
 Prepare and organise your files into directories within ```/lang``` and compile with parameters bellow.
 
 ---
 
-### **Usage / Parameters**
+### **Parameters**
+<sub>Usage / Parameters</sub>
+
+<br>
+
 
 
 Pass the parameters during python file execution.
@@ -138,7 +126,11 @@ A description of each parameter:
 
 ---
 
-### **Usage / Includes**
+### **Includes**
+<sub>Usage / Includes</sub>
+
+<br>
+
 
 
 You can include MD files from within MD files by providing an **inline** MarkDown **code block** with special parameters. Grave accents ` are enclosed (```) in the examples bellow, we need them disclosed in the actual markdown.
@@ -157,7 +149,11 @@ The alternative priority is described here: ```Templates / Structure```.
 
 ---
 
-### **Usage / Ignores**
+### **Ignores**
+<sub>Usage / Ignores</sub>
+
+<br>
+
 
 You can create .gitignore and .npmignore to avoid publishing any uncompiled markdown files. For example:
 
@@ -180,6 +176,7 @@ _README/assets/vendor/
 ---
 
 ### **Vendors**
+
 
 Here are examples of some popular vendors in this readme.
 
@@ -230,11 +227,16 @@ para(path3, right)->in->out->e
 
 ### **Templates**
 
+
 Templating is versatile and easy, allows for custom structures and includes. We hope to add some templates in the near future.
 
 ---
 
-### **Templates / Structure**
+### **Structure**
+<sub>Templates / Structure</sub>
+
+<br>
+
 
 It is important to maintain a couple of things in order to be able to use IncluDoc.
 
@@ -302,7 +304,11 @@ Assuming your ```--alter``` parameter is ```M1```, here is the result on your fi
 
 ---
 
-### **Templates / Multilingual**
+### **Multilingual**
+<sub>Templates / Multilingual</sub>
+
+<br>
+
 
 Generate multilingual documentation, with a user interface.
 
@@ -319,6 +325,7 @@ The HTML version of the docs after generating will appear in ```_README/README.h
 
 ### **Glossary**
 
+
 N/A
 
 
@@ -326,6 +333,7 @@ N/A
 
 
 ### **Reference**
+
 
 [**Markdown2**](https://pypi.org/project/markdown2/)<br>
 [**lxml**](https://pypi.org/project/lxml/)<br>
