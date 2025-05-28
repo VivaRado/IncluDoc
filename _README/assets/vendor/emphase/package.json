@@ -1,0 +1,42 @@
+{
+  "name": "emphase",
+  "version": "0.0.24",
+  "description": "Emphasize your syntax!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/script.js",
+    "devmd": "reload -b -s index-md.html & gulp --watch",
+    "dev": "reload -b & gulp --watch",
+    "build": "gulp --build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VivaRado/emphase.git"
+  },
+  "keywords": [
+    "em",
+    "emphasize",
+    "emphasis",
+    "syntax",
+    "highlight"
+  ],
+  "author": "vivarado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VivaRado/emphase/issues"
+  },
+  "homepage": "https://github.com/VivaRado/emphase#readme",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "reload": "^3.2.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  }
+}

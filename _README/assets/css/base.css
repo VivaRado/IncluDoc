@@ -1,0 +1,15 @@
+* {box-sizing: border-box;}
+nav {
+	display: block;
+	position: relative;
+}
+html, body {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+body {
+	overflow-x: hidden;
+	padding-bottom: 800px !important;
+	width: auto;
+	padding: 2rem;
+}

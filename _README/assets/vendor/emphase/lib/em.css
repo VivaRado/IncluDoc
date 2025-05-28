@@ -1,0 +1,210 @@
+:root {
+	--color-keyword: #a71500;
+	--color-directive: #a71500;
+	--color-value: #f28c28;
+	--color-comment: #78b13f;
+	--color-comment-block: var(--color-comment);
+	--color-string: #484dd2;
+	--color-string-block: var(--color-string);
+	--color-black: #3b3a3a;
+	--color-gray: #bbb;
+	--background-color: #f7f7f7;
+	--btn-color: #FFF;
+	--btn-color-b: #666;
+	--btn-color-inv: #111;
+	--color-numbers: #aaa;
+	--button-background-color: var(--color-black);
+	--border-radius: 0.5rem;
+	--transition: all 0.3s;
+	--numbers-tab-gradient : linear-gradient(90deg, 
+		rgba(255, 255, 255, 1) 0%, 
+		rgba(255, 255, 255, 1) 80%, 
+		rgba(255, 255, 255, 0) 100%);
+	--numbers_transform: translateY(0px);
+
+}
+@media (prefers-color-scheme: dark) { 
+	:root {
+		--color-keyword: #ff8300;
+		--color-directive: #4157ce;
+		--color-value: #71c671;
+		--color-comment: #40454a;
+		--color-comment-block: var(--color-comment);
+		--color-string: #ff8000;
+		--color-string-dcv: #6b97ff;
+		--color-string-block: var(--color-string);
+		--color-black: #acbac7;
+		--color-gray: #BBBBBB;
+		--background-color: #111;
+		--btn-color: #111;
+		--btn-color-b: #111;
+		--btn-color-inv: #FFF;
+		--color-numbers: #40454a;
+		--button-background-color: #F5F5F5;
+		--button-text-color: #3b3a3a;
+		--border-radius: 0.5rem;
+		--transition: all .3s;
+		--numbers-tab-gradient: linear-gradient(90deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 1) 80%, rgba(17, 17, 17, 0) 100%)
+	}
+}
+
+.syntax {
+	width: max-content;
+	height: auto;
+	display: table;
+}
+.emphase {
+	position: relative;
+	font-family: monospace;
+	display: block;
+	width: 100%;
+	height: 20rem;
+	overflow: hidden;
+	line-height: 1.35rem;
+	font-size: 10px;
+	border-radius: 0.3rem;
+	overflow: hidden;
+	background: var(--background-color);
+}
+
+.emphase .code {
+	overflow: auto;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.emphase .code pre {
+	margin: 0 !important;
+}
+.emphase .code .number_tab {
+	content: '';
+	position: sticky;
+	width: 4rem;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: var(--numbers-tab-gradient) !important;
+	display: block;
+	opacity: 1;
+	z-index: 2;
+}
+.emphase .code .syntax {
+	padding: 1rem 0.5rem;
+	border-radius: var(--border-radius);
+	overflow: hidden;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+.emphase .numbers {
+	padding: 1rem;
+	text-align: right;
+	cursor: default;
+	height: auto;
+	position: absolute;
+	display: table;
+	top: 0;
+	z-index: 2;
+	transform: translateY( var(--numbers_transform));
+	transition: transform 0s;
+}
+.emphase .numbers p {
+	margin: 0;
+	white-space: nowrap;
+	color: var(--color-numbers);
+	-webkit-user-select: none;
+	/* Safari */
+	-ms-user-select: none;
+	/* IE 10 and IE 11 */
+	user-select: none;
+	/* Standard syntax */
+}
+.emphase .header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	white-space: nowrap;
+	margin: 0.8rem 0.7rem;
+}
+.emphase .header .button {
+	color: var(--button-text-color);
+	background-color: var(--button-background-color);
+}
+.emphase .header .button, .emphase .header .label {
+	font-size: 0.9rem;
+	padding: 0.4rem 0.6rem;
+	display: inline-block;
+	border: none;
+	line-height: 1rem;
+}
+.emphase .header .label {
+	cursor: default;
+	color: var(--color-gray);
+}
+.emphase .header .button {
+	border-radius: 0.15rem;
+	font-weight: bold;
+	opacity: 0.7;
+	background: transparent;
+	border: 2px solid #666;
+	color: #666;
+}
+.emphase .header .button:hover {
+	cursor: pointer;
+	border: 2px solid var(--btn-color-inv);
+	color: var(--btn-color-inv);
+	background: var(--btn-color);
+	opacity: 1;
+	transition: var(--transition);
+}
+.emphase .code .syntax p {
+	margin: 0;
+	color: var(--color-black);
+	display: block;
+}
+.emphase .code .syntax p em {
+	font-style: normal;
+}
+.emphase .code .syntax p em[data-em=kwd] {
+	font-weight: 700;
+	color: var(--color-keyword);
+}
+.emphase .code .syntax p em[data-em=dcv_str] {
+	color: var(--color-string-dcv);
+}
+.emphase .code .syntax p em[data-em=dcv] {
+	font-weight: 700;
+	color: var(--color-directive);
+}
+.emphase .code .syntax p em[data-em=val] {
+	font-weight: 700;
+	color: var(--color-value);
+}
+.emphase .code .syntax p em[data-em=cmt] {
+	color: var(--color-comment);
+}
+.emphase .code .syntax p em[data-em=cmt_mul] {
+	color: var(--color-comment-block);
+}
+.emphase .code .syntax p em[data-em=str] {
+	color: var(--color-string);
+}
+.emphase .code .syntax p em[data-em=str_mul] {
+	color: var(--color-string-block);
+}
+.emphase .header, .emphase:hover .header {
+	transition: opacity 0.5s;
+}
+.emphase .header {
+	opacity: 0;
+}
+.emphase:hover .header {
+	opacity: 1;
+}
+
+pre.syntax-highlight-wrap {
+	background: none !important;
+}

@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>VRD | includoc | 1.0.0 | 2025/05/28</title>
+		<link rel="icon" href="assets/media/vrd_logo_fill.svg">
+		<link rel="stylesheet" type="text/css" href="assets/css/fface.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/base.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/md.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/ui.css">
+		<link href="assets/vendor/emphase/lib/em.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="assets/vendor/mermaid.js"></script>
+		<script type="text/javascript" src="assets/vendor/raphael.min.js"></script>
+		<script type="text/javascript" src="assets/vendor/underscore-min.js"></script>
+		<script type="text/javascript" src="assets/vendor/sequence-diagram.js"></script>
+		<script type="text/javascript" src="assets/vendor/flowchart.js"></script>
+		<script type="text/javascript" src="assets/vendor/emphase/lib/em.js"></script>
+		<script type="text/javascript">
+			var doc_languages = ['en', 'gr'];
+			var doc_version = "1.0.0";
+			var project_name = "includoc";
+		</script>
+	</head>
+	<body class="markdown">
+		<article class="markdown-body" id="body">
+		<h2><strong>Πρόλογος</strong></h2>
+
+<p><strong>IncluDoc</strong> είναι ένα έργο ανοιχτού κώδικα της <strong>VivaRado</strong>.</p>
+
+<div class="header_logo">
+
+<p><img src="./assets/media/includoc_logo.svg" alt="Screenshot" /></p>
+
+</div>
+
+<div class="sidebar">
+
+<h3><strong>Περιεχόμενα</strong></h3>
+
+<ol>
+<li><strong>Πρόλογος</strong></li>
+<li><strong>Εισαγωγή</strong>
+<ol>
+<li><strong>Προφίλ</strong></li>
+<li><strong>Επισκόπηση Εργου</strong></li>
+</ol></li>
+<li><strong>Σχεδιασμός</strong></li>
+<li><strong>Εγκατάσταση</strong></li>
+<li><strong>Χρήση</strong>
+<ol>
+<li><strong>Παράμετροι</strong></li>
+<li><strong>Συμπεριλήψεις</strong></li>
+<li><strong>Αγνοήσεις</strong></li>
+</ol></li>
+<li><strong>Προμηθευτές</strong></li>
+<li><strong>Πρότυπα</strong>
+<ol>
+<li><strong>Δομή</strong></li>
+<li><strong>Πολυγλωσσία</strong></li>
+</ol></li>
+</ol>
+
+<h3>Γλωσσάρι</h3>
+
+<ol>
+<li><strong>Γλωσσάρι</strong></li>
+</ol>
+
+<h3>Πηγές</h3>
+
+<ol>
+<li><strong>Πηγές</strong></li>
+</ol>
+
+</div>
+
+<h2><strong>Εισαγωγή</strong></h2>
+
+<p><strong>IncluDoc</strong> συμπεριληπτικά και πολύγλωσσα έγγραφα Markdown!</p>
+
+<h4>Συνεισφέροντες:</h4>
+
+<ul>
+<li>VivaRado support@vivarado.com</li>
+<li>Andreas Kalpakidis</li>
+<li>Madina Akhmatova</li>
+</ul>
+
+<hr />
+
+<h3><strong>Εισαγωγή / Προφίλ</strong></h3>
+
+<ul>
+<li>Εταιρεία: VivaRado LLP</li>
+<li>Σχεδιαστής: Andreas Kalpakidis</li>
+<li>Διαχειριστής: Madina Akhmatova</li>
+</ul>
+
+<hr />
+
+<h3><strong>Εισαγωγή / Επισκόπηση Εργου</strong></h3>
+
+<ul>
+<li>Όνομα έργου: IncluDoc</li>
+<li>Κωδικό Όνομα: IncDoc</li>
+<li>Ημερομηνία πρότασης: 28/05/2025</li>
+</ul>
+
+<hr />
+
+<h3><strong>Σχεδιασμός</strong></h3>
+
+<p>Tο IncluDoc συγκεντρώνει αρχεία Markdown, χειρίζεται δηλώσεις συμπερίληψης (include) και δημιουργεί ένα κύριο README.md ή/και ένα πολύγλωσσο README.html με επιφάνεια χρήστη.</p>
+
+<p>Ένα αρχείο μπορεί να έχει εναλλακτικές και μπορείτε να επιλέξετε ποιά θα συμπεριληφθεί για σύνταξη.</p>
+
+<p>Η επιφάνεια χρήστη και τα εισαγόμενα έγγραφα SVG έχουν σχεδιαστεί για να λειτουργούν με <code>prefers-color-scheme: dark</code> και αντιδρούν σε σκοτεινή και φωτεινή επιλογή.</p>
+
+<hr />
+
+<h3><strong>Εγκατάσταση</strong></h3>
+
+<p>Προαπαιτούμενα:</p>
+
+<ul>
+<li>Η συλλογή των αρχείων <strong>Markdown</strong> βασίζεται στην <strong>Python</strong> τις βιβλιοθήκες <strong>Markdown2</strong> και <strong>lxml</strong>. </li>
+<li>Η HTML επιφάνεια χρήστη εφαρμόζει <strong>emphase</strong> για να τονίσει τα στοιχεία του κώδικα, περιλαμβάνεται ήδη στο φάκελο <code>assets/vendors</code>, ίσως χρειαστεί να συμπεριλάβετε κάποια αρχεία γλώσσας στο υποσέλιδο του <code>Lib/html_template.py</code> σε περίπτωση που χρειαστεί να προβάλετε περισσότερες γλώσσες.</li>
+</ul>
+
+<h4>Εγκαταστήστε τις Απαιτήσεις Python:</h4>
+
+<p>Για να εγκαταστήσετε τις απαιτήσεις python από το <code>requirements.txt</code>, εκτελέστε αυτήν την εντολή:</p>
+
+<p><code>pip install -r Lib/requirements.txt</code></p>
+
+<p>ή εγκαταστήστε κάθε εξάρτηση αυτόνομα:</p>
+
+<ul>
+<li>lxml</li>
+<li>Markdown2</li>
+</ul>
+
+<hr />
+
+<h3><strong>Χρήση</strong></h3>
+
+<p>Προετοιμάστε και οργανώστε τα αρχεία σας σε καταλόγους εντός <code>/lang</code> και μεταγλωττίστε με τις παρακάτω παραμέτρους.</p>
+
+<hr />
+
+<h3><strong>Χρήση / Παράμετροι</strong></h3>
+
+<p>Περάστε τις παραμέτρους κατά την εκτέλεση του αρχείου python.</p>
+
+<pre><code class="lang-plaintext">python3 './_README/gen_readme.py' --format 'html,md' --alter 'M0'</code></pre>
+
+<hr />
+
+<h4>Επισκόπηση παραμέτρων</h4>
+
+<p>Περιγραφή κάθε παραμέτρου:</p>
+
+<p><br></p>
+
+<p><strong>--format</strong> [ String ]</p>
+
+<blockquote>
+  <p>Δώστε την μορφή προς δημιουργεία σαν συμβολοσειρά, υποστηριζόμενες μορφές: <code>'html'</code> <code>'md'</code> </p>
+</blockquote>
+
+<p><br></p>
+
+<p><strong>--alter</strong> [ String ]</p>
+
+<blockquote>
+  <p>Παρέχετε τα εναλλακτικά αρχεία για συμπερίληψη, η προτεινόμενη δομή είναι ένα γράμμα και ένας αριθμός όπως <code>A0, A1 ...</code></p>
+</blockquote>
+
+<hr />
+
+<h3><strong>Χρήση / Συμπεριλήψεις</strong></h3>
+
+<p>Μπορείτε να συμπεριλάβετε αρχεία MD μέσα από αρχεία MD παρέχοντας ένα <strong>inline</strong> MarkDown <strong>code block</strong> με ειδικές παραμέτρους. Οι τόνοι ` (Grave) εσωκλείονται (```) στα παραδείγματα που ακολουθούν, χρειαζόμαστε να εξωκλείθουν στον πραγματικό κώδικα markdown.</p>
+
+<pre><code class="lang-plaintext">(```){include=partials/profile_project.md}(```)</code></pre>
+
+<p>Για εναλλακτική συμπερίλήψη:</p>
+
+<pre><code class="lang-plaintext">(```){include=partials/profile_project.md,M0}(```)</code></pre>
+
+<p>Η προτεραιότητα εναλλακτικών αρχείων περιγράφεται εδώ: <code>Templates / Structure</code>.</p>
+
+<hr />
+
+<h3><strong>Χρήση / Αγνοήσεις</strong></h3>
+
+<p>Μπορείτε να δημιουργήσετε .gitignore και .npmignore για να αποφύγετε τη δημοσίευση άτακτων αρχείων markdown. Για παράδειγμα:</p>
+
+<pre><code class="lang-plaintext"># .gitignore
+_README/__pycache__/
+_README/addons/
+_README/lang/
+_README/Lib/
+_README/*.py
+_README/*.txt
+_README/version
+_README/*.html
+_README/*.sh
+_README/assets/css/
+_README/assets/js/
+_README/assets/vendor/</code></pre>
+
+<hr />
+
+<h3><strong>Προμηθευτές</strong></h3>
+
+<p>Ορίστε παραδείγματα ορισμένων δημοφιλών προμηθευτών εντός αυτού του readme.</p>
+
+<hr />
+
+<h4>MermaidJS</h4>
+
+<p>MermaidJS για διάφορα γραφήματα και χρονοδιαγράμματα.</p>
+
+<p><br></p>
+
+<pre><code class="lang-mermaid">pie title Documentation
+    "Time spent writing code" : 10
+    "Time spent documenting it" : 90</code></pre>
+
+<hr />
+
+<h4>FlowchartJS</h4>
+
+<p>FlowchartJS για διαγράμματα ροής.</p>
+
+<p><br></p>
+
+<pre><code class="lang-flowchart">st=&gt;start: Start:&gt;http://www.vivarado.com[blank]
+e=&gt;end:&gt;http://www.vivarado.com
+op1=&gt;operation: My Operation
+sub1=&gt;subroutine: My Subroutine
+cond=&gt;condition: Yes
+or No?:&gt;http://www.vivarado.com
+io=&gt;inputoutput: catch something...
+para=&gt;parallel: parallel tasks
+in=&gt;input: some in
+out=&gt;output: some out
+
+st-&gt;op1-&gt;cond
+cond(yes)-&gt;io-&gt;e
+cond(no)-&gt;para
+para(path1, bottom)-&gt;sub1(right)-&gt;op1
+para(path2, top)-&gt;op1
+para(path3, right)-&gt;in-&gt;out-&gt;e</code></pre>
+
+<hr />
+
+<h3><strong>Πρότυπα</strong></h3>
+
+<p>Η προτύπηση είναι ευέλικτη και εύκολη, επιτρέπει προσωποποιημένες δομές και συμπεριλήψεις. Ελπίζουμε να προσθέσουμε κάποια πρότυπα στο εγγύς μέλλον.</p>
+
+<hr />
+
+<h3><strong>Πρότυπα / Δομή</strong></h3>
+
+<p>Είναι σημαντικό να διατηρήσετε μερικά πράγματα για να μπορείτε να χρησιμοποιήσετε το IncluDoc.</p>
+
+<h4>Hierarchy:</h4>
+
+<p>Η διαδραστική επιφάνεια χρήστη, χρησιμοποιεί τους τίτλους κατηγορίας H3, σε συνδυασμό με την ιεραρχία των περιεχομένων, για την πλοήγηση. Για αυτό θα πρέπει να ταιριάξετε αυτό που έχετε στο αρχείο περιεχομένων σας (που θα καταλήξει ως πλαϊνή μπάρα [sidebar]) και τους τίτλους των κεφαλίδων του αρχείου σας.</p>
+
+<p>π.χ.:</p>
+
+<p>Υποθέτοντας ότι αυτό είναι το <strong>contents.md</strong>:</p>
+
+<pre><code class="lang-plaintext">1.  **Introduction**
+    1.  **Profile**
+        1.  **Contributors**
+    1.  **Project Overview**</code></pre>
+
+<p>Το <strong>document.md</strong> πρέπει να έχει αυτές τις κεφαλίδες:</p>
+
+<pre><code class="lang-plaintext">**Introduction**
+
+**Introduction / Profile**
+
+**Introduction / Profile / Contributors**
+
+**Introduction / Project Overview**</code></pre>
+
+<h4>Προτεραιότητα:</h4>
+
+<p>Τα αρχεία σε κάθε κατάλογο γλώσσας μέσα <code>/lang</code>, και όχι βαθύτερα. Περιλαμβάνονται με σειρά αρίθμησης.</p>
+
+<pre><code class="lang-plaintext">000_preface
+001_contents
+002_document
+003_footer</code></pre>
+
+<h4>Εναλλακτικές:</h4>
+
+<p>Κατά τη διάρκεια της παραγωγής, μπορείτε να εισάγετε την εναλλακτική που προτιμάτε να συμπεριληφθεί, χρησιμοποιώντας την παράμετρο <code>--a</code> or <code>--alter</code>. Αυτό θα επιτρέψει την επιλογή εναλλακτικών εκδόσεων αρχείων για παραγωγή. Η προτεραιότητα είναι η επιλογή του αρχείο που ζητήθηκε με την παράμετρο <code>--alter</code>, εάν αυτό το αρχείο δεν υπάρχει, τότε επιλέγετε η βασική έκδοχη αυτού του αρχείου.</p>
+
+<p>e.g.:</p>
+
+<p>Υποθέτοντας η παράμετρος <code>--alter</code> είναι <code>M1</code>, εδώ είναι το αποτέλεσμα στα αρχεία σας:</p>
+
+<pre><code class="lang-plaintext">000_M1_preface:
+    &gt; θα επιλεγεί επειδή είναι η ζητούμενη εναλλακτική.
+
+000_preface:
+    &gt; θα αγνοηθεί επειδή είναι η βάση και βρέθηκε η εναλλακτική.
+
+001_M0_contents:
+    &gt; θα αγνοηθεί επειδή είναι μια διαφορετική εναλλακτική.
+
+001_contents:
+    &gt; θα επιλεγεί επειδή είναι η βάση και η εναλλακτική που ζητήθηκε δεν βρέθηκε.</code></pre>
+
+<hr />
+
+<h3><strong>Πρότυπα / Πολυγλωσσία</strong></h3>
+
+<p>Δημιουργήστε πολύγλωσσα έγγραφα, με επιφάνεια χρήστη.</p>
+
+<h4>Πολύγλωσσοι Κατάλογοι:</h4>
+
+<p>Το IncluDoc θα συγκεντρώσει κάθε κατάλογο γλωσσών που περιέχετε εντός του <code>/lang</code> θα τους συγκεντρώσει και θα τους συνδυάσει σε ξεχωριστά έγγραφα MD, θα τοποθετηθούν εντός των καταλόγων ως <code>README_collected_{lang}.md</code>.</p>
+
+<p>Η έκδοση HTML των εγγράφων μετά τη δημιουργία θα εμφανιστεί σαν <code>_README/README.html</code> με επιφάνεια χρήστη για εναλλαγή μεταξύ των γλωσσών</p>
+
+<hr />
+
+<h3><strong>Γλωσσάρι</strong></h3>
+
+<p>N/A</p>
+
+<hr />
+
+<h3><strong>Πηγές</strong></h3>
+
+<p><a rel="noopener" target="_blank" href="https://pypi.org/project/markdown2/"><strong>Markdown2</strong></a><br>
+<a rel="noopener" target="_blank" href="https://pypi.org/project/lxml/"><strong>lxml</strong></a><br>
+<a rel="noopener" target="_blank" href="https://mermaid.js.org/"><strong>MermaidJS</strong></a><br>
+<a rel="noopener" target="_blank" href="https://flowchart.js.org/?lng=en"><strong>FlowchartJS</strong></a><br></p>
+
+<hr />
+
+		</article>
+		<script type="text/javascript" src="assets/vendor/emphase/src/languages/em_plaintext.js"></script>
+		<script type="text/javascript" src="assets/vendor/emphase/src/languages/em_javascript.js"></script>
+		<script type="text/javascript" src="assets/vendor/emphase/src/languages/em_html.js"></script>
+		<script type="text/javascript" src="assets/js/utils.js"></script>
+		<script type="text/javascript" src="assets/js/vendors.js"></script>
+		<script type="text/javascript" src="assets/js/script.js"></script>
+	</body>
+</html>
