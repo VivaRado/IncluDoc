@@ -78,7 +78,6 @@ function get_candidate(targ, chain){
 			return null
 		}
 	}
-	console.log(chain, intchain)
 	if (lang.length > 0) {
 		select_target = document.querySelector('.markdown-body'+' '+'.active_lang_content')
 	} else {
