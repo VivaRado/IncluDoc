@@ -52,7 +52,7 @@ function location_check(_t){
 		return false;
 	}
 }
-function get_chain(targ){
+function get_chain(targ, numeric){
 	var ptcp = [];
 	var parents = getParents(targ, ["li"]);
 	var chain = '';
@@ -65,17 +65,20 @@ function get_chain(targ){
 	var schain = chain.slice(0,-divid.length).toLowerCase();
 	return [schain,ptcp];
 }
-function get_candidate(targ, chain, allow_all){
+function get_candidate(targ, chain){
 	var cand = null;
+	var intchain = '';
 	if ( chain ) {
-		sanitized_chain = chain.toLowerCase();
+		chain = chain.toLowerCase();
 	}else{	
 		if (targ) {
-			sanitized_chain = get_chain(targ)[0];
+			chain = get_chain(targ)[0];
+			intchain = get_chain(targ, true)[0];
 		} else {
 			return null
 		}
 	}
+	console.log(chain, intchain)
 	if (lang.length > 0) {
 		select_target = document.querySelector('.markdown-body'+' '+'.active_lang_content')
 	} else {
@@ -85,13 +88,12 @@ function get_candidate(targ, chain, allow_all){
 		select_target.querySelectorAll('strong').forEach((p)=>{
 			if (location_check(p)) {
 				var in_t = p.textContent.toLowerCase().trim();
-				if (sanitized_chain == in_t) {
+				if (chain == in_t) {
 					cand = p;
 				}
 			}
 		})
-	}
-	return [cand, sanitized_chain];
+	}	return [cand, chain];
 }
 function retarget_sidebar(){
 	var sidebar = document.querySelector('.fix_sidebar');
@@ -263,19 +265,19 @@ function set_nav_toggle(){
 	}
 	set_nav_toggle();
 	check_width();
-	var loc_hash = window.location.hash;
-	var get_c = get_candidate(null, urlize(loc_hash.substring(1, loc_hash.length),true));
-	if (get_c != null) {
-		run_scroll(get_c[0]);
-		reveal_sidebar_depth(fsas, get_c, null, null);
-		activate_scroll();
-	}
 	mbtn.addEventListener('click', (e)=>toggle_menu());
 	window.addEventListener('resize', (e)=>check_width());
 
+	var loc_hash = window.location.hash;
 	setTimeout(()=>{
 		setClasses(active_lang);
 		is_multilang && toggle_lang(active_lang);
+		var get_c = get_candidate(null, urlize(loc_hash.substring(1, loc_hash.length),true));
+		if (get_c != null) {
+			run_scroll(get_c[0]);
+			reveal_sidebar_depth(fsas, get_c, null, null);
+			activate_scroll();
+		}
 		document.querySelector('.markdown').classList.add('reveal');
 	},100)
 
