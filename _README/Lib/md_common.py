@@ -67,8 +67,10 @@ def collect_mds(dir_path, up_dir, name, volumes):
 						infile.close()
 	outfile.close()
 
-def make_default_github_md(dir_path, up_dir, name, volumes):
-	new_README = os.path.join( up_dir.rsplit('/', 3)[0], name )
+def make_default_github_md(dir_path, up_dir, name, name_out):
+	new_README = os.path.join( up_dir.rsplit('/', 3)[0], name_out )
+	print('new_README')
+	print(new_README)
 	data_b = ""
 	with open(new_README,"w") as outfile:
 		infile = open(os.path.join(up_dir, name),"r")

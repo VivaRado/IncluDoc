@@ -22,7 +22,8 @@ parser.add_argument("-f", "--format", dest="format",
 parser.add_argument("-a", "--alter", dest="alter",
                     help="Export Alternative .e.g.: M0 or M1")
 args = parser.parse_args()
-langs = ['en', 'gr'] #os.listdir(os.path.join(dir_path,'lang'))
+default_lang = "en"
+langs = os.listdir(os.path.join(dir_path,'lang'))
 def make_multilingual_html(langs, title):
 	lang_contents = []
 	lang_comb_path = os.path.join(dir_path,"README.html")
@@ -81,7 +82,8 @@ if faults == False:
 					up_dir = os.path.abspath(os.path.join(md_path, '../../..'))
 					md_path_b = os.path.join(dir_path,"lang",_y)
 				collect_mds(md_path, md_path_b, md_name, gen_alter)
-				make_default_github_md(md_path, md_path_b, md_name, gen_alter)
+				if default_lang in md_name and 'README_collected' not in md_name:
+					make_default_github_md(md_path, md_path_b, 'README_collected_%s.md' % (default_lang), 'README.md')
 				if x == 'html':
 					md_to_html(os.path.join(dir_path,"lang",_y), md_name)
 					book_path = os.path.join(dir_path,"lang",_y,"md_temp.html")
@@ -89,7 +91,7 @@ if faults == False:
 					temp_html = open(book_path, "r")
 					html_data = temp_html.read()
 					temp_html.close()
-					
+
 					title = title_full
 					new_data_nr = combine_header(html_data, title_full, langs, '"%s"' % (version), '"%s"' % (project_name))
 					newfile_nr = open(book_path_new, "w")
